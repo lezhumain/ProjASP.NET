@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Projet.Models.Livres>
+
+@{
+    ViewBag.Title = "Liste de livres";
+}
+<h2>Cette catégorie contient @Model.Count() livres</h2>
+<ul>
+    @foreach (var book in Model)
+    {
+        <li>
+            <b>@book.Titre</b>
+            <ul>
+                <li>Auteur : <b>@book.Auteur</b></li>
+                <li>parut en<b> @book.Annee</b></li>
+                <li>édité par <b>@book.Maison</b></li>
+            </ul>
+        </li>
+    }
+</ul>

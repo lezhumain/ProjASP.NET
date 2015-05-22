@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Projet.Models.Utilisateurs>
+
+@{
+    ViewBag.Title = "Accueil";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Présentation des étudiants</h2>
+        <ul>
+            @foreach (var util in Model)
+            {
+                <li>
+                    <p><b>@util.nom @util.prenom, @util.age ans</b></p>
+                    <p>@util.mail</p>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Horloge</h2>
+        <p>@ViewBag.Date</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Logs :</h2>
+        <p>Le journal des visites est réalisé grâce à [LogActionFilter] qui se trouve dans le HomeController et au filtre logActionFilter.</p>
+        <p>On peut les visualiser avec l'outils de déboguage de Visual Studio.</p>
+    </div>
+</div>

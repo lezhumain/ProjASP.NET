@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Projet.Models.Genre>
+@{
+    ViewBag.Title = "Categorie";
+}
+
+
+<h3>Merci de sélectionner une de ces catégories de livres :</h3>
+<ul>
+    @foreach (var categorie in Model)
+    {
+        <li>@Html.ActionLink(categorie.Name, "Rea", categorie)</li>
+    }
+</ul>
+
